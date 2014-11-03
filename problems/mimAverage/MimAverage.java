@@ -30,7 +30,7 @@ public class MimAverage {
 				minString = "\nMinimum average is the sum of indexs: " + str;
 			}
 			for(int k=i+2; k<a.length; k++) {
-				sum = sum + a[k];
+				sum += a[k];
 				average = sum / count++;
 				index+= k + ", "; 
 				str = index + " = " + sum + ", Average = " + average;

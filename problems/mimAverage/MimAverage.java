@@ -12,6 +12,8 @@ public class MimAverage {
 	}
 
 	// This is O(n)
+	// The minimum average is always going to be the average of 2 or 3 elements
+	// So you actually do not need to get all the combinations for the average
 	public static String getMinAvg(int a[]) {
 		double sum = 0;
 		double avg;
@@ -43,7 +45,8 @@ public class MimAverage {
 	}
 
 
-	// This is O(n^2)
+
+	// This is O(n^2) by getting all the combinations
 	public static String getMinAverage(int a[]) {
 		double sum = 0;
 		double count;

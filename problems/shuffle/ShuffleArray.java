@@ -1,4 +1,4 @@
-// Given and array of n integers, write a function tha† shuffles 
+// Given an array of n integers, write a function that shuffles 
 // the array in place such that all permutations of the n integers are equally likely
 // https://www.youtube.com/watch?v=U0nvXHh7o-w&index=9&list=WL at 4:24
 

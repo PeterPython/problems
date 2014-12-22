@@ -25,6 +25,26 @@ public class SequentialList<Item> implements Iterable<Item> {
 		first = new Node(d, first);
 	}
 
+
+	public void removeNode(Item item) {
+		if(first == null) {
+			return;
+		}
+
+		if(first.data == item) {
+			first = first.next;
+		}
+
+		Node current = first;
+		while(current.next != null) {
+			if(current.next.data == item) {
+				current.next = current.next.next;
+			}
+			current = current.next;
+		}
+		current.next = null;
+	}
+
 	// Problem 2.1: Write code to remove duplicates from an unsorted linked list.
 	public void removeDuplicates() {
 		Node current = first;

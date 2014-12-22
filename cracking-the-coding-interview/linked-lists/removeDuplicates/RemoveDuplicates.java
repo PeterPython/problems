@@ -24,5 +24,23 @@ public class RemoveDuplicates {
 			System.out.print(j + " ");
 		}
 		System.out.println();
+
+
+		System.out.println("\nRemove Node: ");
+		SequentialList<Integer> list2 = new SequentialList<Integer>();
+
+		for(Integer i=1; i<10; i++) {
+			list2.add(i);
+		}
+
+		list2.removeNode(3);
+		// list2.removeNode(1);
+		list2.removeNode(2);
+		list2.removeNode(9);
+
+		for(Integer j : list2) {
+			System.out.print(j + " ");
+		}
+		System.out.println();
 	}
 }

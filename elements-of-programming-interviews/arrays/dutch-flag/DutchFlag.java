@@ -1,8 +1,10 @@
-// Problem 6.1: Write a function that takes an array A and an index 
-// rearranges the elements such that all elements less than A[i] appear first, 
-// followed by elements equal to A[i], followed by elements greater than A[i],
-// Your algorithm. should have O(1) space complexity and O(n) time complexity.
-// Page 52. Solution page 183
+/*
+Problem 6.1: Write a function that takes an array A and an index 
+rearranges the elements such that all elements less than A[i] appear first, 
+followed by elements equal to A[i], followed by elements greater than A[i],
+Your algorithm. should have O(1) space complexity and O(n) time complexity.
+Page 52. Solution page 183
+*/
 
 public class DutchFlag {
 	public static void dutchFlagSort(Comparable a[], Comparable pivot) {

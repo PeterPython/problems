@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 
 public class SequentialList<Item> implements Iterable<Item> {
-	Node first;
+	Node first = null;
 
 	private class Node {
 		Item data;

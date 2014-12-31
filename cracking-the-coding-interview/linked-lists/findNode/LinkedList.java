@@ -11,17 +11,10 @@ public class LinkedList<Item> implements Iterable<Item> {
 			this.item = item;
 			this.next = next;
 		}
-
-		Node(Item item) {
-			this.item = item;
-		}
 	}
 
 	public void add(Item item) {
-		while(first.next!=null) {
-			first = first.next;
-		}
-
+		first = new Node(item, first);
 	}
 
 	public Iterator<Item> iterator() {
@@ -55,5 +48,6 @@ public class LinkedList<Item> implements Iterable<Item> {
 		for(Integer i : ll) {
 			System.out.print(i + " ");
 		}
+		System.out.println();
 	}
 }

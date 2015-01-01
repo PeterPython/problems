@@ -34,7 +34,7 @@ public class RemoveDuplicates {
 		}
 
 		list2.removeNode(3);
-		// list2.removeNode(1);
+		list2.removeNode(1);
 		list2.removeNode(2);
 		list2.removeNode(9);
 

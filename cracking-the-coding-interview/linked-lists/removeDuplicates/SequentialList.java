@@ -38,7 +38,8 @@ public class SequentialList<Item> implements Iterable<Item> {
 		Node current = first;
 		while(current.next != null) {
 			if(current.next.data == item) {
-				current.next = current.next.next;
+					current.next = current.next.next;
+					break;  // This allows to delete the last element without causing any errors
 			}
 			current = current.next;
 		}

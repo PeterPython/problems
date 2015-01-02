@@ -1,7 +1,10 @@
+// Problem 2.2: Implement an algorithm to find the kth to last element of a singly linked list.
+// Page 77. Solution 185
+
 import java.util.Iterator;
 
 public class LinkedList<Item> implements Iterable<Item> {
-	private Node first;
+	private Node first = null;
 
 	private class Node {
 		Item item;
@@ -37,7 +40,25 @@ public class LinkedList<Item> implements Iterable<Item> {
 		public void remove() {}
 	}
 
+	// Implement an algorithm to find the kth to last element of a singly linked list.
+	public Item findKthNode(int k) {
+		Node p1 = first;
+		Node p2 = first;
 
+		for(int i=0; i<k; i++) {
+			p2 = p2.next;
+		}
+
+		while(p2.next != null) {
+			p1 = p1.next;
+			p2 = p2.next;
+		}
+
+		return p1.item;
+	}
+
+
+	// Main
 	public static void main(String args[]) {
 		LinkedList<Integer> ll = new LinkedList<Integer>();
 
@@ -49,5 +70,9 @@ public class LinkedList<Item> implements Iterable<Item> {
 			System.out.print(i + " ");
 		}
 		System.out.println();
+
+		System.out.println("findKthNode(0): " + ll.findKthNode(0));
+		System.out.println("findKthNode(1): " + ll.findKthNode(1));
+		System.out.println("findKthNode(9): " + ll.findKthNode(9));
 	}
 }

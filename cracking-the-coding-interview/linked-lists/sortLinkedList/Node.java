@@ -55,6 +55,11 @@ public class Node<Item extends Comparable<Item>> {
 			current = current.next;
 		}
 
+		if(lessThanHead == null) {
+			return greaterThanHead;
+		}
+
+		// Concatenate
 		lessThan.next = greaterThanHead;
 
 		return lessThanHead;
@@ -64,6 +69,7 @@ public class Node<Item extends Comparable<Item>> {
 		n.next = null;
 		return n;
 	}
+
 
 	public boolean hasNext() {
 		return next != null;
@@ -80,28 +86,28 @@ public class Node<Item extends Comparable<Item>> {
 		n.add(3);
 		n.add(5);
 
-		// Node i;
-		// for(i=n; i.hasNext(); i=i.next) {
-		// 	System.out.print(i.item + " ");
-		// }
-		// System.out.print(i.item);
-		// System.out.println();
-
-		// Node nod = n.sortLinkedList(n, 4);
-
-		// for(i=nod; i.hasNext(); i=i.next) {
-		// 	System.out.print(i.item + " ");
-		// }
-		// System.out.print(i.item);
-		// System.out.println();
-
-		n.changeNode(n);
-
 		Node i;
 		for(i=n; i.hasNext(); i=i.next) {
 			System.out.print(i.item + " ");
 		}
 		System.out.print(i.item);
 		System.out.println();
+
+		Node nod = n.sortLinkedList(n, 4);
+
+		for(i=nod; i.hasNext(); i=i.next) {
+			System.out.print(i.item + " ");
+		}
+		System.out.print(i.item);
+		System.out.println();
+
+		// n.changeNode(n);
+
+		// Node i;
+		// for(i=n; i.hasNext(); i=i.next) {
+		// 	System.out.print(i.item + " ");
+		// }
+		// System.out.print(i.item);
+		// System.out.println();
 	}
 }

@@ -28,6 +28,16 @@ public class Node<Item> {
 
 	// Main
 	public static void main(String args[]) {
+		Node n = new Node(1);
+		for(int i=2; i<=10; i++) {
+			n.add(i);
+		}
 
+		Node i;
+		for(i=n; i.hasNext(); i=i.next) {
+			System.out.print(i.item + " ");
+		}
+		System.out.print(i.item);
+		System.out.println();
 	}
 }

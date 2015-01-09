@@ -24,14 +24,43 @@ public class Node<Item> {
 		return next != null;
 	}
 
-	
+	public static Node findLoopStart(Node head) {
+		Node slowRunner = head;
+		Node fastRunner = head;
+
+		// Find meeting point. Which is loopSize - k steps in the linkedlist
+		while(fastRunner != null && fastRunner.next != null) {
+			slowRunner = slowRunner.next;
+			fastRunner = fastRunner.next.next;
+
+			if(slowRunner == fastRunner) {   // Collision
+				break;
+			}
+		}
+
+		// Not a loop
+		if(fastRunner == null || fastRunner.next == null) {
+			return null;
+		}
+
+		slowRunner = head;
+		while(slowRunner != fastRunner) {
+			slowRunner = slowRunner.next;
+			fastRunner = fastRunner.next;
+		}
+
+		return slowRunner;
+	}
+
 
 	// Main
 	public static void main(String args[]) {
 		Node n = new Node(1);
-		for(int i=2; i<=10; i++) {
+		for(int i=2; i<=11; i++) {
 			n.add(i);
 		}
+
+		Node k = n.next.next.next;
 
 		Node i;
 		for(i=n; i.hasNext(); i=i.next) {
@@ -39,5 +68,10 @@ public class Node<Item> {
 		}
 		System.out.print(i.item);
 		System.out.println();
+		i.next = k;
+
+		Node beginning = findLoopStart(n);
+
+		System.out.println("Beginning of loop: " + beginning.item);
 	}
 }

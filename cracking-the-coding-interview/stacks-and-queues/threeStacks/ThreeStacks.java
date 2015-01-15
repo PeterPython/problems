@@ -74,44 +74,4 @@ public class ThreeStacks {
 			return array[--third];
 		}
 	}
-
-
-	public static void main(String args[]) {
-		ThreeStacks st = new ThreeStacks(9);
-
-		// Push to First Stack
-		st.pushFirst(1);
-		st.pushFirst(2);
-		st.pushFirst(3);
-
-		// Pop First Stack
-		st.popFirst();
-		st.popFirst();
-		st.popFirst();
-
-		// Push back to First Stack
-		st.pushFirst(1);
-		st.pushFirst(2);
-		st.pushFirst(3);
-
-		// Push to Second Stack
-		st.pushSecond(4);
-		st.pushSecond(5);
-		st.pushSecond(6);
-
-		// Pop Second Stack
-		st.popSecond();
-		st.popSecond();
-		st.popSecond();
-
-		// Push to Third Stack
-		st.pushThird(7);
-		st.pushThird(8);
-		st.pushThird(9);
-
-		// Pop Third Stack
-		st.popThird();
-		st.popThird();
-		st.popThird();
-	}
 }

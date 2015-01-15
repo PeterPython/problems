@@ -13,7 +13,7 @@ public class ThreeStacksTwo {
 	}
 
 	public void push(int i, int stackNumber) {
-		if(pointer[stackNumber] >= (stackNumber+1)*size) {
+		if(goToStack(stackNumber) >= (stackNumber+1)*size) {
 			throw new RuntimeException("Stack is full");
 		}
 		else {
@@ -32,8 +32,7 @@ public class ThreeStacksTwo {
 		}
 	}
 
-	public static int goToStack(int stackNumber) {
+	private int goToStack(int stackNumber) {
 		return (stackNumber * size) + (pointer[stackNumber]);
 	}
-
 }

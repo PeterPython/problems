@@ -11,32 +11,63 @@ just a single stack).
 Page 80. Solution 208
 */
 
-public class SetOfStacks<Item> {
-	private Node first;
+import java.util.Stack;
+import java.util.ArrayList;
 
-	private class Node {
-		Item item;
-		Node next;
+public class SetOfStacks {
+	private ArrayList<Stack> stacksArray = new ArrayList<Stack>();
+	private int capacity;
 
-		public Node(Item item) {
-			this.item = item;
-		}
+	public SetOfStacks(int capacity) {
+		this.capacity = capacity;
 	}
 
-	public void push(Item item) {
-		Node oldFirst = first;
-		first = new Node(item);
-		first.next = oldFirst;
-	}
-
-	public Item pop() {
-		if(first != null) {
-			Item item = first.item;
-			first = first.next;
-			return item;
-		}
-		else {
+	public Stack getLastStack() {
+		if(stacksArray.size() == 0) {
 			return null;
 		}
+		else {
+			return stacksArray.get(stacksArray.size()-1);
+		}
+	}
+
+	public void push(int item) {
+		Stack last = getLastStack();
+		if(last != null && last.size() != capacity-1) {
+			last.push(item);
+		}
+		else {
+			Stack st = new Stack<Integer>();
+			st.push(item);
+			stacksArray.add(st);
+		}
+	}
+
+	public int pop() {
+		Stack last = getLastStack();
+		int item = (int) last.pop();  // If last == null it will return null
+		if(last.size() == 0) {
+			stacksArray.remove(stacksArray.size()-1);
+		}
+		return item;
+	}
+
+
+	// Main
+	public static void main(String args[]) {
+		SetOfStacks ss = new SetOfStacks(3);
+		ss.push(1);
+		ss.push(2);
+		ss.push(3);
+
+		ss.pop();
+		ss.pop();
+		ss.pop();
+
+		ss.push(1);
+		ss.push(2);
+		ss.push(3);
+
+		ss.push(4);
 	}
 }

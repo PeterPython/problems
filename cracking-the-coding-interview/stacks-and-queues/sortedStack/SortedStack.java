@@ -7,14 +7,20 @@
 
 import java.util.Stack;
 
-public class SortedStack extends Stack<Integer> {
-	public static Stack<Integer> sort(Stack stack) {
+public class SortedStack {
+	public static Stack<Integer> sort(Stack<Integer> stack) {
 		Stack<Integer> sorted = new Stack();
 		int temp;
 
 		while(!stack.isEmpty()) {
-			// if(sorted.isEmpty) 
-			sorted.push(stack.pop());
-		}
+			temp = stack.pop();
+
+			while(!sorted.isEmpty() && sorted.peek() > temp) {
+				stack.push(sorted.pop());
+			}
+
+			sorted.push(temp);
+		}	
+		return sorted;
 	}
 }

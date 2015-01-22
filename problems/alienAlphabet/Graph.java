@@ -13,73 +13,91 @@ import java.util.*;
 public class Graph {
 	private int e;
 	private int v;
-	private Hashtable<String, LinkedList<String>> adj;
+	private LinkedList<Integer> adj[];
 
-	private HashSet marked;
-	private Stack<String> reversePost;  // Vertices in reverse postorder
+	private boolean marked[];
 
-	public Graph() {
-		this.v = 0;
-		this.e = 0;
-		adj = new Hashtable<String, LinkedList<String>>();
-	}
+	private Stack<String> reverseOrder;
 
-	public void addEdge(String v, String w) {
-		LinkedList<String> ll;
-		if(!adj.containsKey(v)) {
-			ll = new LinkedList<String>();
-			ll.add(w);
-			adj.put(v, ll);
+	private Hashtable<String, Integer> st;
+	private String inv[];
 
-			LinkedList<String> ll2 = new LinkedList<String>();	
-			adj.put(w, ll2);
+	public Graph(int v) {
+		this.v = v;
+		this.e = e;
+		adj = (LinkedList<Integer>[]) new LinkedList[v];
+
+		st = new Hashtable<String, Integer>();
+		inv = new String[v];
+
+		for(int i=0; i<v; i++) {
+			adj[i] = new LinkedList<Integer>();
 		}
-		else {
-			ll = adj.get(v);
-			ll.add(w);
-		}
-		e++;
-	}
-
-	public Iterable<String> adj(int v) {
-		return adj.get(v);
-	}
-
-	public int getV() {
-		return v;
 	}
 
 	public int getE() {
 		return e;
 	}
 
+	public int getV() {
+		return v;
+	}
 
-	// Depth First Search
+	public Iterable<Integer> adj(int v) {
+		return adj[v];
+	}
+
+	public void addEdge(int v, int w) {
+		adj[v].add(w);
+		e++;
+	}
+
 	public void dfs() {
-		marked = new HashSet();
-		Set<String> keys = adj.keySet();
-		for(String v : keys) {
-			if(!marked.contains(v)) {
-				dfs(v);			
+		marked = new boolean[v];
+		reverseOrder = new Stack<String>();
+
+		for(int i=0; i<v; i++) {
+			if(!marked[i]) {
+				dfs(i);
 			}
 		}
 	}
 
-	public void dfs(String v) {
-		marked.add(v);
+	public void dfs(int v) {
+		marked[v] = true;
 
-		for(String w : adj.get(v)) {
-			if(!marked.contains(w)) {
+		for(int w : adj(v)) {
+			if(!marked[w]) {
 				dfs(w);
 			}
 		}
-		reversePost.add(v);  // Add to Stack after recursive call
+		reverseOrder.push(name(v));  // To get topological order
 	}
 
-	public Iterable<String> topologicalOrder() {
-		return reversePost;
+
+	// addEdge for String vertex
+	public void addEdge(String v, String w) {
+		if(!st.containsKey(v)) {
+			st.put(v, st.size());
+			inv[st.get(v)] = v;
+		}
+		if(!st.containsKey(w)) {
+			st.put(w, st.size());
+			inv[st.get(w)] = w;
+		}
+
+		addEdge(st.get(v), st.get(w));
 	}
 
+	public String name(int v) {
+		return inv[v];
+	}
+
+
+	// Return topological order of string
+	public Stack<String> topologicalOrder() {
+		return reverseOrder;
+	}
 
 	// Break down array of Strings into a graph of characters
 	public void stringToCharGraph(String a[]) {
@@ -104,11 +122,5 @@ public class Graph {
 				addEdge(String.valueOf(st1.charAt(0)), String.valueOf(st2.charAt(0)));
 			}
 		}
-	}
-
-	public Iterable<String> getOrder(String a[]) {
-		stringToCharGraph(a);
-		dfs();
-		return topologicalOrder();
 	}
 }

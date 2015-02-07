@@ -40,6 +40,35 @@ public class Node<Item> {
 	}
 
 
+	// Using recursion to reverse LinkedList
+	public static Node recursiveReverse(Node node) {
+		return recursiveReverse(node, null);
+	}
+
+	// Using recursion to reverse LinkedList
+	public static Node recursiveReverse(Node current, Node prev) {
+		if(current == null) {
+			return null;
+		}
+
+		// If previous node is not null set next to previous
+		Node next = current.next;
+		if(prev != null) {
+			current.next = prev;
+		}
+		else {
+			current.next = null;
+		}
+
+		// When reach the end of Linked List
+		if(next == null) {
+			return current;
+		}
+
+		return recursiveReverse(next, current);
+	}
+
+
 	// Main
 	public static void main(String args[]) {
 		Node ll = new Node(1);
@@ -57,6 +86,19 @@ public class Node<Item> {
 		Node ll2 = reverseLinkedList(ll);
 
 		for(i=ll2; i.next!=null; i=i.next) {
+			System.out.print(i.item + " ");
+		}
+		System.out.print(i.item);
+		System.out.println();
+		System.out.println("Recursive: ");
+
+		Node ll3 = new Node(1);
+		ll3.add(2);
+		ll3.add(3);
+		ll3.add(4);
+
+		Node ll4 = recursiveReverse(ll3);
+		for(i=ll4; i.next!=null; i=i.next) {
 			System.out.print(i.item + " ");
 		}
 		System.out.print(i.item);

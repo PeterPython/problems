@@ -1,4 +1,5 @@
-// Find kth greatest element in an array
+// Find kth greatest element in an array using Quick Select
+// Page 345 (Algorithms by Robert Sedgewick)
 
 public class FindKthGreatest {
 	public static int findKthGreatest(int a[], int k) {

@@ -4,37 +4,40 @@
 
 public class LongestIncreasingSubsequence {
 	public static int longestIncreasingSubsequence(int a[]) {
-		int maxCount = 1;
-		int count = 1;
-		int prev = 0;
-
-		// This is so we can skip the ones that we already analized in a previos loop
-		boolean skip[] = new boolean[a.length];
+		int max = 0;
+		int memo[] = new int[a.length];
 
 		for(int i=0; i<a.length; i++) {
-			prev = a[i];
-			if(!skip[0]) {
-				for(int j=i; j<a.length; j++) {
-					if(a[j] > prev) {
-						count++;
-						prev = a[j];
-						skip[j] = true;
-						if(count > maxCount) {
-							maxCount = count;
-						}
-					}
-				}		
-			}
-			count = 1;  // Reset
+			memo[i] = 1;
 		}
 
-		return maxCount;
+		for(int i=a.length-1; i>=0; i--) {
+			int temp = memo[i];
+			int maxTemp = temp;
+			for(int j=i+1; j<a.length; j++) {
+				if(a[i] < a[j] && temp < memo[i]+memo[j]) {
+					temp = memo[i] + memo[j];
+				}
+				if(temp > maxTemp) {
+					maxTemp = temp;
+				}
+				if(temp > max) {
+					max = temp;
+				}
+			}
+			memo[i] = maxTemp;
+		}
+
+		return max;
 	}
 
 
 	// Main
 	public static void main(String args[]) {
-		int a[] = {4,5,1,2,3,6,7};
+		int a[] = {4,5,1,2,3,6,7};  // 5
 		System.out.println(longestIncreasingSubsequence(a));
+
+		int b[] = {2,3,8,4,5,10,6,7};  // 6
+		System.out.println(longestIncreasingSubsequence(b));
 	}
 }

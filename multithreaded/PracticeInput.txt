@@ -1,0 +1,10 @@
+20D,null,Every day you may make progress,0,1,false
+EC0,978,Every step may be fruitful,2,4,false
+68B,20D,The path to our destination is not always a straight one,1,2,false
+57A,834,Deploy software to device group,1,3,false
+834,null,Select one or more mobile applications,0,2,false
+978,20D,We turn back,1,3,false
+68B,20D,The path to our destination is not always a straight one,1,2,true
+B5A,B20,Users with installation failures,2,4,false
+57A,834,Deploy software to device group,1,3,true
+B20,834,We turn back,1,4,false

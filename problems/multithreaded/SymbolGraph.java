@@ -98,9 +98,9 @@ public class SymbolGraph {
 		Scanner in = new Scanner(fr);
 
 		in.nextLine();
-		String line;
 		while(in.hasNextLine()) {
-			System.out.println("hi");
+			String line = in.nextLine();
+			System.out.println(line);
 		}
 	}
 }

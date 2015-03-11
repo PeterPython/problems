@@ -18,6 +18,7 @@ public class MinCoins {
 	}
 
 
+	// Using Dynamic Programming
 	public static int minCoinsDP(int a[], int k) {
 		int memo[] = new int[k+1];
 		return minCoinsDP(a, k, memo);
@@ -27,7 +28,7 @@ public class MinCoins {
 		if(k == 0) {
 			return 0;
 		}
-		else if(k < 0) {
+		else if(k < 0) {  // When k is less than 0 then we return -1
 			return -1;
 		}
 		else if(memo[k] != 0) {
@@ -39,7 +40,7 @@ public class MinCoins {
 		for(int i=0; i<a.length; i++) {
 			int number = minCoinsDP(a, k-a[i], memo) + 1;
 
-			if(number < min && number > 0) {
+			if(number < min && number > 0) { // If k is less than 0 then we return -1 (1-1=0) so this will not run
 				min = number;
 			}
 		}

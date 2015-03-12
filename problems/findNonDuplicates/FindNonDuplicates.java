@@ -25,7 +25,6 @@ public class FindNonDuplicates {
 		}
 
 		y = xor ^ x;
-
 		System.out.println(x + " " + y);
 	}
 

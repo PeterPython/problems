@@ -32,12 +32,45 @@ public class LongestIncreasingSubsequence {
 	}
 
 
+	// Another Solution
+	public static int longestIncreasing(int a[]) {
+		int[] memo = new int[a.length];
+		int totalMax = 0;
+
+		for(int i=0; i<a.length; i++) {
+			memo[i] = 1;  // Initialize all memo to 1
+		}
+
+		for(int i=a.length-1; i>=0; i--) {
+			int maxCount = 0;
+			for(int j=i; j<a.length; j++) {
+				if(a[i] < a[j] && memo[j] > maxCount) {
+					maxCount = memo[j];
+				}
+			}
+			memo[i] += maxCount;
+
+			// Get maximum
+			if(memo[i] > totalMax) {
+				totalMax = memo[i];
+			}
+		}
+
+		return totalMax;
+	}
+
 	// Main
 	public static void main(String args[]) {
 		int a[] = {4,5,1,2,3,6,7};  // 5
-		System.out.println(longestIncreasingSubsequence(a));
-
 		int b[] = {2,3,8,4,5,10,6,7};  // 6
+		int c[] = {4,5,1,5,3,4};   // 3
+
+		System.out.println(longestIncreasingSubsequence(a));
 		System.out.println(longestIncreasingSubsequence(b));
+		System.out.println(longestIncreasingSubsequence(c));
+
+		System.out.println(longestIncreasing(a));
+		System.out.println(longestIncreasing(b));
+		System.out.println(longestIncreasing(c));
 	}
 }

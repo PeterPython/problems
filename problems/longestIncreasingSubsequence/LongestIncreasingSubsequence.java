@@ -64,6 +64,8 @@ public class LongestIncreasingSubsequence {
 		int a[] = {4,5,1,2,3,6,7};  // 5
 		int b[] = {2,3,8,4,5,10,6,7};  // 6
 		int c[] = {4,5,1,5,3,4};   // 3
+		int d[] = {1};  // 1
+		int e[] = {2,1};  // 1
 
 		System.out.println(longestIncreasingSubsequence(a));
 		System.out.println(longestIncreasingSubsequence(b));
@@ -72,5 +74,8 @@ public class LongestIncreasingSubsequence {
 		System.out.println(longestIncreasing(a));
 		System.out.println(longestIncreasing(b));
 		System.out.println(longestIncreasing(c));
+		System.out.println(longestIncreasing(d));
+		System.out.println(longestIncreasing(e));
+
 	}
 }

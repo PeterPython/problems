@@ -1,4 +1,5 @@
-// Find kth greatest element in an array using Quick Select
+// Find kth greatest element in an unsorted array using Quick Select
+// Average time O(n). Worst Case O(n^2)
 // Page 345 (Algorithms by Robert Sedgewick)
 
 public class FindKthGreatest {

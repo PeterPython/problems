@@ -1,0 +1,23 @@
+2. The Triangle (200pts)
+Problem
+Given a triangle like the one below, find the maximum total by starting at the top row and moving to adjacent numbers on the row beneath it. 
+Hint: Don’t try brute-forcing it.
+
+Input
+The first line will contain N - A single integer containing the number of rows in the triangle. The next N lines will contain I space separated integers, where I is the current line number.
+
+Sample Input
+4
+8
+7 4
+2 5 6
+8 5 9 3
+
+Output
+Output a single line with the maximum possible total.
+
+Sample Output
+29
+
+Constraints
+1 <= N <= 200

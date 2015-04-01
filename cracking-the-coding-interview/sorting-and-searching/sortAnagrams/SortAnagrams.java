@@ -1,5 +1,5 @@
 // Problem 11.2: Write a method to sort an array of strings 
-// so that all the anagrams are next to each other.
+// so that all the anagrams are next to each other. O(n log(n))
 // Page 121. Solution 361
 
 import java.util.*;
@@ -9,6 +9,8 @@ public class SortAnagrams {
 		Arrays.sort(a, new AnagramComparator());
 	}
 
+	// This is a more efficient of sorting the array because we don't
+	// really need to sort it completely but only put the anagrams together
 	public static String[] sortAnagrams2(String a[]) {
 		HashMap<String, LinkedList<String>> map = new HashMap();
 

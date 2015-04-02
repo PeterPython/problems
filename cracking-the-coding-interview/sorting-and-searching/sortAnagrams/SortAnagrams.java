@@ -5,6 +5,8 @@
 import java.util.*;
 
 public class SortAnagrams {
+	// This is the simple solution but less efficient
+	// It just uses the comparator to sort the array
 	public static void sortAnagrams(String a[]) {
 		Arrays.sort(a, new AnagramComparator());
 	}

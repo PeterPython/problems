@@ -21,7 +21,7 @@ public class Triangle {
 	}
 
 	public static void main(String args[]) throws IOException {
-		File file = new File("input.txt");  // Name of the file to read;
+		File file = new File("input2.txt");  // Name of the file to read;
 		Scanner in = new Scanner(file);  // Read a file
 		int n = Integer.parseInt(in.nextLine());
 		System.out.println(n);

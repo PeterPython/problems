@@ -9,6 +9,8 @@ public class LongestPalindrome {
 		// Memo[i][j] where i is the starting character, j is the last character
 		boolean memo[][] = new boolean[n][n];
 		int maxLength = 1;
+		int start = 0;
+		int end = 0;
 
 		// One character is considered a palindrome
 		for(int i=0; i<n; i++) {
@@ -20,6 +22,8 @@ public class LongestPalindrome {
 			if(str.charAt(i) == str.charAt(i+1)) {
 				memo[i][i+1] = true;
 				maxLength = 2;
+				start = i;
+				end = i+1;
 			}
 		}
 
@@ -29,10 +33,13 @@ public class LongestPalindrome {
 				if(memo[i+1][l-1+i] && str.charAt(i) == str.charAt(l+i)) {
 					memo[i][l+i] = true;
 					maxLength = l+1;
+					start = i;
+					end = l+i;
 				}
 			}
 		}
 
+		System.out.println(str.substring(start, end+1));
 		return maxLength;
 	}
 

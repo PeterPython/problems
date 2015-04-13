@@ -37,8 +37,41 @@ public class LongestPalindrome {
 	}
 
 
+	// O(n^2) with no extra memory space
+	public static String longestPalindrome(String str) {
+		String longest = "";
+		for(int i=0; i<str.length()-1; i++) {
+			String s1 = expandAroundCenter(str, i, i);
+			if(s1.length() > longest.length()) {
+				longest = s1;
+			}
+
+			String s2 = expandAroundCenter(str, i, i+1);
+			if(s2.length() > longest.length()) {
+				longest = s2;
+			}
+		}
+
+		return longest;
+
+	}
+
+	public static String expandAroundCenter(String str, int l, int r) {
+		while(l >= 0 && r < str.length() && str.charAt(l) == str.charAt(r)) {
+			l--;
+			r++;
+		}
+
+		return str.substring(l+1, r);
+	}
+
+
 	public static void main(String args[]) {
 		System.out.println(longestPalindromeDP("ababa"));
 		System.out.println(longestPalindromeDP("ab"));
+
+		System.out.println();
+		System.out.println(longestPalindrome("ababa"));
+		System.out.println(longestPalindrome("ab"));
 	}
 }

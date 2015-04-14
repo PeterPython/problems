@@ -48,19 +48,18 @@ public class LongestPalindrome {
 	public static String longestPalindrome(String str) {
 		String longest = "";
 		for(int i=0; i<str.length()-1; i++) {
-			String s1 = expandAroundCenter(str, i, i);
+			String s1 = expandAroundCenter(str, i, i);  // Expand around a character
 			if(s1.length() > longest.length()) {
 				longest = s1;
 			}
 
-			String s2 = expandAroundCenter(str, i, i+1);
+			String s2 = expandAroundCenter(str, i, i+1);  // Expand between two characters
 			if(s2.length() > longest.length()) {
 				longest = s2;
 			}
 		}
 
 		return longest;
-
 	}
 
 	public static String expandAroundCenter(String str, int l, int r) {

@@ -27,6 +27,6 @@ public class PermuteK {
 		permuteKOutOfN("abc", 2);
 
 		System.out.println("\n3");
-		permuteKOutOfN("abc", 3);	
+		permuteKOutOfN("abc", 3);
 	}
 }

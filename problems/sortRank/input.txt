@@ -1,0 +1,7 @@
+6
+USA 2
+China 3
+Venezuela 1
+Spain 6
+Mexico 4
+Korea 5

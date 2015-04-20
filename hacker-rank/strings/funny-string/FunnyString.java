@@ -2,9 +2,6 @@
 
 import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class FunnyString {
     public static void isFunny(String str) {

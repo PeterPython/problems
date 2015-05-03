@@ -1,3 +1,5 @@
+// Fibonacci using memoization/dynamic programming
+
 public class DynamicFibonacci {
 	public static int fibonacci(int n) {
 		int a[] = new int[n+1];
@@ -6,19 +8,16 @@ public class DynamicFibonacci {
 
 	public static int dFibonacci(int n, int a[]) {
 		if(n == 0) {
-			a[0] = 0;
 			return 0;
 		}
 		else if(n == 1) {
-			a[1] = 1;
 			return 1;
 		}
 		
-		else if(n != 0 && a[n] != 0) {
-			return a[n];
+		else if(a[n] == 0) {
+			a[n] = dFibonacci(n-1, a) + dFibonacci(n-2, a);
 		}
 
-		a[n] = dFibonacci(n-1, a) + dFibonacci(n-2, a);
 		return a[n];
 	}
 

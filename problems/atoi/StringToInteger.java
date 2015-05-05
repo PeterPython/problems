@@ -18,11 +18,13 @@ public class StringToInteger {
 
 		double number = 0;
 
+		// Check if string is between 0-9
 		while(i < str.length() && str.charAt(i) >= '0' && str.charAt(i) <= '9') {
 			number = number * 10 + (str.charAt(i) - '0');
 			i++;
 		}
 
+		// If it is negative change the number to negative
 		if(sign == '-') {
 			number = -number;
 		}

@@ -2,7 +2,7 @@
 // TODO: Edge cases
 
 public class SubstractStrings {
-	// Assuming x > y
+	// Assuming x > y and positive integers
 	public static String substractStrings(String x, String y) {
 		String result = "";
 		int lend = 0;

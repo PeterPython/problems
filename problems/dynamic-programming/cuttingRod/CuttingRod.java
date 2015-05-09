@@ -1,6 +1,6 @@
 // Dynamic Programming Problem
-// Cutting a rod. Given a rod of length k and for each length 
-// there is a price (index and value of array). 
+// Cutting a rod. Given a rod of length k and for each length (index of array)
+// there is a price (value). 
 // Calculate the maximum profit. O(n^2) with DP
 // https://www.youtube.com/watch?v=U-09Gs6cbsQ
 

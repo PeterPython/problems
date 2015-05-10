@@ -36,6 +36,7 @@ public class BST {
 		return node;
 	}
 
+	// Wrapper method
 	public boolean isBalanced() {
 		int balanced = isBalanced(root, 0);
 		if(balanced == -1) {

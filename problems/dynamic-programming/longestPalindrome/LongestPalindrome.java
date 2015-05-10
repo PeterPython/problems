@@ -62,6 +62,7 @@ public class LongestPalindrome {
 		return longest;
 	}
 
+	// Helper method to expand around one chaacter to find longest palindrome
 	public static String expandAroundCenter(String str, int l, int r) {
 		while(l >= 0 && r < str.length() && str.charAt(l) == str.charAt(r)) {
 			l--;

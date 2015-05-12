@@ -10,8 +10,11 @@ class ShuffleArray {
 		int temp;
 		Random rn = new Random();
 
-		for(int i=0; i<a.length; i++) {
-			random = rn.nextInt((a.length - 0) + 1) + 0;
+		int n = a.length;
+		for(int i=0; i<n; i++) {
+			random = rn.nextInt(n);  // Random number between 0-a.length-1
+
+			// Swap
 			temp = a[i];
 			a[i] = a[random];
 			a[random] = temp;
@@ -21,6 +24,7 @@ class ShuffleArray {
 	public static void main(String args[]) {
 		int a[] = {1,2,3,4,5,6,7,8};
 
+		System.out.println("Original: ");
 		for(int i=0; i<a.length; i++) {
 			System.out.print(a[i] + " ");
 		}

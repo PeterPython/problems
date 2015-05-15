@@ -3,6 +3,7 @@
 import java.util.*;
 
 public class SumToK {
+	// Assuming not duplicates
 	public static int sumToK(int a[], int k) {
 		HashMap<Integer, Boolean> map = new HashMap<Integer, Boolean>();
 		int n = a.length;

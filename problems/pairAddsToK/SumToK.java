@@ -62,6 +62,7 @@ public class SumToK {
 		System.out.println(countPairs(a, 6));
 
 		int b[] = {2,2,3,3};
+		System.out.println(sumToK(b, 5));
 		System.out.println(countPairs(b, 5));
 	}
 }

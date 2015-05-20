@@ -1,3 +1,5 @@
+# http://www.codewars.com/kata/who-won-the-election/train/python
+
 def getWinner(listOfBallots):
   map = {}
   winning = ""

@@ -1,7 +1,7 @@
 # http://www.codewars.com/kata/double-cola/python
 
 def whoIsNext(names, r):
-    l = names[:]   # Make copy of list
+    l = names[:]   # Make copy of list because we need to manipulate it
     name = ""
     for i in range(0, r):
         name = l.pop(0)

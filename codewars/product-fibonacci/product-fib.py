@@ -9,4 +9,4 @@ def productFib(prod):
         f0 = f1
         f1 = f3
         
-    return [f0, f1, f0*f1==prod]
+    return [f0, f1, f0*f1 == prod]

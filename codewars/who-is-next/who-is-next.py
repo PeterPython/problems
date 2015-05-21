@@ -11,6 +11,7 @@ def whoIsNext(names, r):
     return name
 
 
+# Using Math and no extra space (Still working on it)
 # def whoIsNext(names, r):
 #     index = r
 

@@ -1,14 +1,18 @@
 # http://www.codewars.com/kata/sudoku-solution-validator/python
 
+import math 
 def validSolution(board):
-    rows = [0] * 9
-    columns = [0] * 9
-    box = [[0 for x in range(3)] for x in range(3)] 
+    n = 9
+    m = math.sqrt(n)
 
-    for i in range(0,9):
-        for j in range(0,9):
-            r = i/3
-            c = j/3
+    rows = [0] * n
+    columns = [0] * n
+    box = [[0 for x in range(m)] for x in range(m)] 
+
+    for i in range(0,n):
+        for j in range(0,n):
+            r = i/n
+            c = j/n
             value = board[i][j]
 
             if value == 0:

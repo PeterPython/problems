@@ -13,3 +13,20 @@ def josephus_survivor(n,k):
         result.append(var)
     
     return result.pop()
+
+
+# Slightly different problem
+# http://www.codewars.com/kata/josephus-permutation/train/python
+
+def josephus(items,k):
+    li = items[:]
+    result = []
+    i = 0
+    while li:
+        i += k-1
+        while i >= len(li):
+            i = i - len(li)
+        var = li.pop(i)
+        result.append(var)
+    
+    return result

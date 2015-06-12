@@ -32,7 +32,7 @@ public class LongestIncreasingSubsequence {
 	}
 
 
-	// Another Solution
+	// Another Solution (Newer and cleaner solution)
 	public static int longestIncreasing(int a[]) {
 		int[] memo = new int[a.length];
 		int totalMax = 0;
@@ -42,7 +42,7 @@ public class LongestIncreasingSubsequence {
 		}
 
 		for(int i=a.length-1; i>=0; i--) {
-			int maxCount = 0;
+			int maxCount = 0;   // Current count
 			for(int j=i; j<a.length; j++) {
 				if(a[i] < a[j] && memo[j] > maxCount) {
 					maxCount = memo[j];

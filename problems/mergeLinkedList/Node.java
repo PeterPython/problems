@@ -23,6 +23,7 @@ public class Node {
 		return next != null;
 	}
 
+	// Iterative Solution
 	public static Node merge(Node n1, Node n2) {
 		Node head = n1;  // Keep a pointer at the beginning of the node
 		Node p = n1;  // Pointer to connect nodes
@@ -38,7 +39,7 @@ public class Node {
 			return null;
 		}
 
-		// Set p pointing to smallest node first
+		// Set p and head pointing to smallest node first
 		if(n1.item < n2.item) {
 			p = n1;
 			head = n1;

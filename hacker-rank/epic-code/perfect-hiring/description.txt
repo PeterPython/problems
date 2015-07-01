@@ -1,0 +1,37 @@
+https://www.hackerrank.com/contests/epiccode/challenges/perfect-hiring/submissions/code/3333079
+
+You are the hiring manager of a startup and you are interviewing N candidates, each having an ID numbered from 1 to N. Each candidate has a score Ai calculated from their HackerRank tests. You start with patience P and lose patience X after each interview.
+
+One by one candidates enter your room in the sequence of their ID numbers. To save time you decide to give a rating of (P×Ai). In the end you hire the candidate with maximum rating. Print the ID of this candidate. 
+
+NOTE: It is guaranteed that a unique ID gets selected.
+
+Input Format 
+The first line begins with 3 space-separated integers, N, P, and X. 
+The next line contains an array A[], containing the scores of the N candidates.
+
+Constraints 
+1≤N≤105 
+1≤P≤109 
+1≤X≤100 
+1≤Ai≤109
+
+Output Format 
+Output the ID of the Applicant who get selected.
+
+NOTE: ID's are numbered from 1 to N.
+
+Sample Input
+
+4 94 8
+8 6 4 6
+Sample Output
+
+1
+Explanation 
+Rating for Applicant 1 is 94×8=752 
+Chance for Applicant 2 is 86×6=516 
+Chance for Applicant 3 is 78×4=312 
+Chance for Applicant 4 is 70×6=420
+
+So ID 1 gets selected.

@@ -51,6 +51,7 @@ public class Node {
 			n2 = n2.next;
 		}
 
+		// Start traversing both lists and merging them
 		while(n1 != null && n2 != null) {
 			if(n1.item < n2.item) {
 				p.next = n1;

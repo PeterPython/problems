@@ -7,7 +7,7 @@ def solution(string,markers):
     out = []
     for st in a:
         for mark in markers:
-            st = re.sub(r'[\%s].*'%mark, '', st).strip()
+            st = re.sub(r'[\%s].*'%mark, '', st).strip()  # Using regular expressions
         out.append(st)
     
     res = ""
